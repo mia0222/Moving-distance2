@@ -5,6 +5,7 @@
 <title>位置情報取得</title>
 </head>
   <body>
+   <body>
     <h1>位置情報の取得</h1>
     <p id="locationData">位置情報はここに表示されます.</p>
     <p id="distance">移動距離: 0 メートル</p>
@@ -65,7 +66,7 @@
                 // 位置情報の監視を開始
                 watchID = navigator.geolocation.watchPosition(displayLocation, function (error) {
                     console.error("位置情報の取得に失敗しました: " + error.message);
-                });
+                }, { enableHighAccuracy: true }); // 高精度な位置情報を要求
                 startButton.disabled = true;
                 stopButton.disabled = false;
             } else {
@@ -88,3 +89,5 @@
         stopButton.addEventListener("click", stopLocationTracking);
         stopButton.disabled = true;
     </script>
+    </body>
+</html>
