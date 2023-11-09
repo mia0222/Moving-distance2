@@ -10,7 +10,8 @@
     <h1>位置情報の取得</h1>
     <p id="locationData">位置情報はここに表示されます.</p>
     <p id="distance">移動距離: 0 メートル</p>
-     <p id="count">計測回数: 0 回</p>
+    <p id="count">計測回数: 0 回</p>
+    <p id="mean">平均移動距離: 0 メートル</p>
     <button id="startButton">開始</button>
     <button id="stopButton">停止</button>
 
@@ -18,6 +19,7 @@
         var locationDataElement = document.getElementById("locationData");
         var distanceElement = document.getElementById("distance");
         var countElement = document.getElementById("count");
+        var meanElement = document.getElementById("mean");
         var startButton = document.getElementById("startButton");
         var stopButton = document.getElementById("stopButton");
         var watchID = null; // 位置情報の監視ID
@@ -42,10 +44,15 @@
 
                 var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
                 var count = 1;
+                var mean = 0;
                 totalDistance += distance; // 移動距離を累積
                 totalcount += count ;
+                if(totalcount !== 0){
+                    mean = totalDistance/totalcount;//平均移動距離  
+                }
                 distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル";
                 countElement.innerHTML = "計測回数: " + totalcount + "回";
+                meanElement.innerHTML = "平均移動距離: " + mean.toFixed(2) + "メートル";
             }
 
             lastPosition = position;
