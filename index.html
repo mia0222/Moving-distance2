@@ -17,12 +17,13 @@
     <script>
         var locationDataElement = document.getElementById("locationData");
         var distanceElement = document.getElementById("distance");
-      var countElement = document.getElementById("count");
+        var countElement = document.getElementById("count");
         var startButton = document.getElementById("startButton");
         var stopButton = document.getElementById("stopButton");
         var watchID = null; // 位置情報の監視ID
         var lastPosition = null;
         var totalDistance = 0; // 移動距離の累積
+        var totalcount = 0;
 
         function displayLocation(position) {
             var latitude = position.coords.latitude;
@@ -40,10 +41,11 @@
                 var currentLng = position.coords.longitude;
 
                 var distance = calculateDistance(lastLat, lastLng, currentLat, currentLng);
+                var count = 1;
                 totalDistance += distance; // 移動距離を累積
-                count++;
+                totalcount += count;
                 distanceElement.innerHTML = "移動距離: " + totalDistance.toFixed(2) + " メートル";
-                countElement.innerHTML = "計測回数: "+count+ "回";
+                countElement.innerHTML = "計測回数: "+ totalcount + "回";
             }
 
             lastPosition = position;
