@@ -1,4 +1,4 @@
-body {
+/*body {
     background-color: #0059ff9d;
 }
 
@@ -26,6 +26,56 @@ button {
 
 /* スマートフォン向けのメディアクエリ */
 @media (max-width: 1100px) {
+    body {
+        background-color: #0059ff9d;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: #00ff4c;
+    }
+    
+    p {
+        background-color: lightblue;
+        color: rebeccapurple;
+        text-align: center;
+        margin: 0;
+        font-size: 25px;
+    }
+    
+    button {
+        display: block;
+        margin: 0 auto;
+        font-size: 25px;
+        width: 500px;
+        height: 50px;
+    }
+}
+@media screen and(orientation: landscape){
+    body {
+        background-color: #0059ff9d;
+    }
+    h1 {
+        text-align: center;
+        font-size: 100px;
+        color: #00ff4c;
+    }
+    
+    p {
+        background-color: lightblue;
+        color: rebeccapurple;
+        text-align: center;
+        margin: 0;
+        font-size: 50px;
+    }
+    button {
+        font-size:50px;
+        width: 100%; /* 小さな画面ではボタンを画面全体に広げる */
+        height: 5%;
+    }
+}
+@media screen and(orientation: portrait){
     h1 {
         text-align: center;
         font-size: 100px;
