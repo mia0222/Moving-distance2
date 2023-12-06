@@ -40,6 +40,8 @@ button {
         font-size: 50px;
     }
     button {
+        font-size:50px;
         width: 100%; /* 小さな画面ではボタンを画面全体に広げる */
+        height: 100;
     }
 }
