@@ -25,7 +25,7 @@ button {
 }
 
 /* スマートフォン向けのメディアクエリ */
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
     button {
         width: 100%; /* 小さな画面ではボタンを画面全体に広げる */
     }
