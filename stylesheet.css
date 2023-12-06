@@ -26,6 +26,19 @@ button {
 
 /* スマートフォン向けのメディアクエリ */
 @media (max-width: 1100px) {
+    h1 {
+        text-align: center;
+        font-size: 100px;
+        color: #00ff4c;
+    }
+    
+    p {
+        background-color: lightblue;
+        color: rebeccapurple;
+        text-align: center;
+        margin: 0;
+        font-size: 50px;
+    }
     button {
         width: 100%; /* 小さな画面ではボタンを画面全体に広げる */
     }
